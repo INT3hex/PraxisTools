@@ -1,4 +1,9 @@
-﻿# Url to TI-Konnektor (nur mit Secunet getestet!)
+﻿param (
+    [string]$user,
+    [string]$pass
+)
+
+# Url to TI-Konnektor (nur mit Secunet getestet!)
 $baseKonnektorUrl = "https://10.1.1.30:8500"
 
 
@@ -7,8 +12,17 @@ $uriLogin = $baseKonnektorUrl+"/rest/mgmt/ak/konten/login"
 # Karten
 $uriKarten = $baseKonnektorUrl+"/rest/mgmt/ak/dienste/karten"
 
-# Credentials sicher abfragen
-$creds = $Host.UI.PromptForCredential("QueryKonnektor", "Benutzer und Kennwort für Konnektorzugriff.", "", "")
+# Ignorieren von Zertifikatsprüfungen (da idR Private Certificate vom Konnektor)
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }
+
+# 
+if ($user -and $pass) {
+    $password = ConvertTo-SecureString $pass -AsPlainText -Force
+    $creds = New-Object System.Management.Automation.PSCredential ($user, $password)
+} else {
+    # Credentials sicher über UI abfragen
+    $creds = $Host.UI.PromptForCredential("QueryKonnektor", "Benutzer und Kennwort für Konnektorzugriff.", "", "")
+}
 
 $body = @{
     username = $creds.UserName
@@ -67,10 +81,10 @@ try {
         # UnixTimestamps konvertieren
         foreach ($item in $data) {
             if ($item.insertTime) {
-                $item.insertTime = Convert-UnixMillisToDateTime $item.insertTime
+                $item.insertTime = convertTime $item.insertTime
             }
             if ($item.expirationDate) {
-                $item.expirationDate = Convert-UnixMillisToDateTime $item.expirationDate
+                $item.expirationDate = convertTime $item.expirationDate
             }
         }
 
