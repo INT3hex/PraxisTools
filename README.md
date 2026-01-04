@@ -1,6 +1,6 @@
 **Konn_QueryAlleKarten.ps1** <br>
   Tool zum Auslesen aller Kartenleser und gesteckter SmartCards (SMC-KT, SMC-B, HBA, ...) eines TI-Konnektors
-  <img width="3711" height="1908" alt="image" src="https://github.com/user-attachments/assets/b4108d24-6d16-4faf-b2c0-a8c389366323" />
+  <img width="928" height="477" alt="image" src="https://github.com/user-attachments/assets/b4108d24-6d16-4faf-b2c0-a8c389366323" />
 
 **T2med_ShowKombinierteSucheFromJSON.ps1** <br>
   Tool zum formatierten Anzeigen von exportierten "Kombinierten Suchen" aus T2med
