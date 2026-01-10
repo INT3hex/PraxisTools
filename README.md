@@ -10,3 +10,6 @@
   Tool zum selektiven Auswählen & Exportieren von "Kombinierten Suchen" aus einer T2med-JSON-Datei
   <img width="887" height="593" alt="image" src="https://github.com/user-attachments/assets/a2088907-ffcf-4b6e-8e0a-fab7a5e3603e" />
 
+**KIM_GetFingerprint.ps1** <br>
+  Tool zum Fingerprint eines KIM-Clientmoduls anzeigen
+  <img width="1111" height="184" alt="image" src="https://github.com/user-attachments/assets/32dd7192-a9af-4727-982d-14cb1f796de1" />
