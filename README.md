@@ -13,3 +13,8 @@
 **KIM_GetFingerprint.ps1** <br>
   Tool zum Fingerprint eines KIM-Clientmoduls anzeigen
   <img width="1111" height="184" alt="image" src="https://github.com/user-attachments/assets/32dd7192-a9af-4727-982d-14cb1f796de1" />
+
+**LDAP_GetFingerprint.ps1** <br>
+  Tool zum Fingerprint des Konnektors / LDAP-Proxy anzuzeigen
+  <img width="1274" height="949" alt="image" src="https://github.com/user-attachments/assets/07b26e71-e752-4dd7-9dd1-4042b90dcc6b" />
+
